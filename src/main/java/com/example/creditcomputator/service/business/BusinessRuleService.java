@@ -13,9 +13,12 @@ import com.example.creditcomputator.service.business.rules.BusinessRuleData;
 @Service
 public class BusinessRuleService {
 
-	@Autowired
-	private List<BusinessRule> businessRules;
-	
+	private final List<BusinessRule> businessRules;
+
+	public BusinessRuleService(List<BusinessRule> businessRules) {
+		this.businessRules = businessRules;
+	}
+
 	public Optional<CreditAppeal> getCreditAppeal(BusinessRuleData businessRuleData) {
 		
 		return businessRules.stream()

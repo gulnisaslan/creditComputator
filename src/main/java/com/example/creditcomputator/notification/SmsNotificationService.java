@@ -10,7 +10,7 @@ import com.example.creditcomputator.entity.AppUser;
 public class SmsNotificationService implements NotificationService{
 
 	@Override
-	public void logCreditLimitAppeal(AppUser appUser, Double creditLimit, 
+	public void notifyCreditLimitAppeal(AppUser appUser, Double creditLimit,
 			Boolean creditApprovalStatus, LocalDateTime executedAt) {
 
 		if(creditApprovalStatus) {

@@ -27,17 +27,17 @@ public class CreditAppealServiceImpl implements CreditAppealService{
 	private final CreditAppealRepository creditAppealRepository;
 	private final ModelMapper modelMapper;
 	private final CreditScoreService creditScoreService;
-	private final NotificationService loggerService;
+	private final NotificationService notificationService;
 	private final AppUserService appUserService;
 	private final BusinessRuleService businessRuleService;
 	
 	public CreditAppealServiceImpl(CreditAppealRepository creditAppealRepository, ModelMapper modelMapper,
-			CreditScoreService creditScoreService, NotificationService loggerService, AppUserService appUserService,
+			CreditScoreService creditScoreService, NotificationService notificationService, AppUserService appUserService,
 			BusinessRuleService businessRuleService) {
 		this.creditAppealRepository = creditAppealRepository;
 		this.modelMapper = modelMapper;
 		this.creditScoreService = creditScoreService;
-		this.loggerService = loggerService;
+		this.notificationService = notificationService;
 		this.appUserService = appUserService;
 		this.businessRuleService = businessRuleService;
 	}
@@ -86,7 +86,7 @@ public class CreditAppealServiceImpl implements CreditAppealService{
 		
 		AppUser appUser = modelMapper.map(appUserResponse, AppUser.class);
 		
-		loggerService.logCreditLimitAppeal(appUser, creditAppealOptional.get().getCreditLimit(), 
+		notificationService.notifyCreditLimitAppeal(appUser, creditAppealOptional.get().getCreditLimit(),
 									creditAppealOptional.get().getCreditApprovalStatus(), 
 									creditAppealOptional.get().getCreatedAt());
 		
