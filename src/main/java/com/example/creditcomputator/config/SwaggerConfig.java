@@ -29,11 +29,6 @@ public class SwaggerConfig implements WebMvcConfigurer {
 	private String apiMinorVersion;
 	@Value("${apiTimeStamp}")
 	private long apiTimeStamp;
-	
-//	@Value("${server.servlet.context-path}")
-//	private String contextPath;
-//	@Value("${spring.mvc.servlet.path}")
-//	private String servletPath;
 
 	@Value("${server.address}")
 	private String host;
@@ -50,21 +45,6 @@ public class SwaggerConfig implements WebMvcConfigurer {
     }
 	
 
-//	@Bean
-//	public Docket api(ServletContext servletContext) {
-//		return new Docket(DocumentationType.SWAGGER_2).select()
-//				.apis(RequestHandlerSelectors.basePackage("com.example.creditcomputator"))
-//				.paths(PathSelectors.any())
-//				.build()
-//				.host(host.concat(":").concat(Long.toString(port)))
-//				.pathProvider(new RelativePathProvider(servletContext) {
-//                    @Override
-//                    public String getApplicationBasePath() {
-//                        return contextPath;
-//                    }
-//                })
-//			  .apiInfo(apiInfo());
-//	}
 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("Credit Computator")
