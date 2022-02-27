@@ -52,35 +52,35 @@ class CreditScoreServiceImplTest {
     void getAllCreditScores() {
 
 
-//        CreditScoreResponse creditScoreResponse1 = CreditScoreResponse.builder()
-//                .id("12345678910")
-//                .assignedCreditScore(800.00)
-//                .appUserFullName("Gülnisa Aslan")
-//                .appUserMonthlyIncome(6000.00)
-//                .appUserPhoneNumber("543335454454")
-//                .createdAt(LocalDateTime.now())
-//                .build();
-//        CreditScoreResponse creditScoreResponse2 = CreditScoreResponse.builder()
-//                .id("12345678910")
-//                .assignedCreditScore(800.00)
-//                .appUserFullName("Gülnisa Aslan")
-//                .appUserMonthlyIncome(6000.00)
-//                .appUserPhoneNumber("543335454454")
-//                .createdAt(LocalDateTime.now())
-//                .build();
-//        List<CreditScoreResponse> creditScoreResponseList= new ArrayList<>();
-//        creditScoreResponseList.add(creditScoreResponse1);
-//        creditScoreResponseList.add(creditScoreResponse2);
-//
-//
-//
-//        List<CreditScore> creditScoreList = creditScoreResponseList.stream()
-//                .map(creditScoreResponse -> modelMapper.map(creditScoreResponse, CreditScore.class))
-//                .collect(Collectors.toList());
-//
-//        Mockito.when(creditScoreRepository.findAll()).thenReturn(creditScoreList);
-//
-//        assertEquals(creditScoreResponseList.size(),creditScoreList.size());
+        CreditScoreResponse creditScoreResponse1 = CreditScoreResponse.builder()
+                .id("12345678910")
+                .assignedCreditScore(800.00)
+                .appUserFullName("Gülnisa Aslan")
+                .appUserMonthlyIncome(6000.00)
+                .appUserPhoneNumber("543335454454")
+                .createdAt(LocalDateTime.now())
+                .build();
+        CreditScoreResponse creditScoreResponse2 = CreditScoreResponse.builder()
+                .id("12345678910")
+                .assignedCreditScore(800.00)
+                .appUserFullName("Gülnisa Aslan")
+                .appUserMonthlyIncome(6000.00)
+                .appUserPhoneNumber("543335454454")
+                .createdAt(LocalDateTime.now())
+                .build();
+        List<CreditScoreResponse> creditScoreResponseList= new ArrayList<>();
+        creditScoreResponseList.add(creditScoreResponse1);
+        creditScoreResponseList.add(creditScoreResponse2);
+
+
+
+        List<CreditScore> creditScoreList = creditScoreResponseList.stream()
+                .map(creditScoreResponse -> modelMapper.map(creditScoreResponse, CreditScore.class))
+                .collect(Collectors.toList());
+
+        Mockito.when(creditScoreRepository.findAll()).thenReturn(creditScoreList);
+
+        assertEquals(creditScoreResponseList.size(),creditScoreList.size());
 
 
     }
@@ -89,36 +89,36 @@ class CreditScoreServiceImplTest {
     void getCreditScoresByPagination() {
         List<CreditScoreResponse> creditScoreResponses = new ArrayList<>();
 
-//        CreditScoreResponse creditScoreResponse = CreditScoreResponse.builder()
-//                .id("12345678910")
-//                .assignedCreditScore(800.00)
-//                .appUserFullName("Gülnisa Aslan")
-//                .appUserMonthlyIncome(6000.00)
-//                .appUserPhoneNumber("543335454454")
-//                .createdAt(LocalDateTime.now())
-//                .build();
-//        CreditScoreResponse creditScoreResponse1 = CreditScoreResponse.builder()
-//                .id("12345678910")
-//                .assignedCreditScore(800.00)
-//                .appUserFullName("Gülnisa Aslan")
-//                .appUserMonthlyIncome(6000.00)
-//                .appUserPhoneNumber("543335454454")
-//                .createdAt(LocalDateTime.now())
-//                .build();
-//        creditScoreResponses.add(creditScoreResponse);
-//        creditScoreResponses.add(creditScoreResponse1);
-//
-//
-//
-//        int page = 1;
-//        int size= 1;
-//        Pageable pageable = PageRequest.of(page,size);
-//        CreditScore map = modelMapper.map(creditScoreResponse, CreditScore.class);
-//        Page<CreditScore> scoreResponses = new PageImpl<>(Collections.singletonList(map));
-//
-//        when(creditScoreRepository.findAll(pageable)).thenReturn(scoreResponses);
-//
-//        assertEquals(scoreResponses.getNumberOfElements(),1);
+        CreditScoreResponse creditScoreResponse = CreditScoreResponse.builder()
+                .id("12345678910")
+                .assignedCreditScore(800.00)
+                .appUserFullName("Gülnisa Aslan")
+                .appUserMonthlyIncome(6000.00)
+                .appUserPhoneNumber("543335454454")
+                .createdAt(LocalDateTime.now())
+                .build();
+        CreditScoreResponse creditScoreResponse1 = CreditScoreResponse.builder()
+                .id("12345678910")
+                .assignedCreditScore(800.00)
+                .appUserFullName("Gülnisa Aslan")
+                .appUserMonthlyIncome(6000.00)
+                .appUserPhoneNumber("543335454454")
+                .createdAt(LocalDateTime.now())
+                .build();
+        creditScoreResponses.add(creditScoreResponse);
+        creditScoreResponses.add(creditScoreResponse1);
+
+
+
+        int page = 1;
+        int size= 1;
+        Pageable pageable = PageRequest.of(page,size);
+        CreditScore map = modelMapper.map(creditScoreResponse, CreditScore.class);
+        Page<CreditScore> scoreResponses = new PageImpl<>(Collections.singletonList(map));
+
+        when(creditScoreRepository.findAll(pageable)).thenReturn(scoreResponses);
+
+        assertEquals(scoreResponses.getNumberOfElements(),1);
 
     }
 
@@ -151,35 +151,35 @@ class CreditScoreServiceImplTest {
     @Test
     void deleteCreditScoreById_SuccessfullyDeleted() {
 
-//        //given
-//        String id = "56fgfdgd56906fdgdkgofdg";
-//        CreditScoreResponse expectedCreditScoreResponse =
-//                            CreditScoreResponse.builder()
-//                                                .id(id)
-//                                                .assignedCreditScore(800.0)
-//                                                .appUserFullName("İhsan Doğramacı")
-//                                                .appUserMonthlyIncome(5000.0)
-//                                                .appUserPhoneNumber("095680454353")
-//                                                .createdAt(LocalDateTime.parse("2022-02-26T19:41:42.955"))
-//                                                .build();
-//
-//        CreditScore expectedCreditScore =
-//                CreditScore.builder()
-//                        .id(id)
-//                        .score(800.0)
-//                        .createdAt(LocalDateTime.parse("2022-02-26T19:41:42.955"))
-//                        .build();
-//
-//        //when
-//        Optional<CreditScore> expectedOptionalCreditScore = Optional.of(expectedCreditScore);
-//        Mockito.when(creditScoreRepository.findById(id))
-//                                        .thenReturn(expectedOptionalCreditScore);
-//        //Mockito.when(creditScoreRepository.deleteById(expectedCreditScore.getId())).doNothing();
-//        Mockito.when(modelMapper.map(expectedCreditScore, CreditScoreResponse.class))
-//                                        .thenReturn(expectedCreditScoreResponse);
-//
-//        //then
-//        assertEquals(expectedCreditScoreResponse, creditScoreServiceImpl.deleteCreditScoreById(id));
+        //given
+        String id = "56fgfdgd56906fdgdkgofdg";
+        CreditScoreResponse expectedCreditScoreResponse =
+                            CreditScoreResponse.builder()
+                                                .id(id)
+                                                .assignedCreditScore(800.0)
+                                                .appUserFullName("İhsan Doğramacı")
+                                                .appUserMonthlyIncome(5000.0)
+                                                .appUserPhoneNumber("095680454353")
+                                                .createdAt(LocalDateTime.parse("2022-02-26T19:41:42.955"))
+                                                .build();
+
+        CreditScore expectedCreditScore =
+                CreditScore.builder()
+                        .id(id)
+                        .score(800.0)
+                        .createdAt(LocalDateTime.parse("2022-02-26T19:41:42.955"))
+                        .build();
+
+        //when
+        Optional<CreditScore> expectedOptionalCreditScore = Optional.of(expectedCreditScore);
+        Mockito.when(creditScoreRepository.findById(id))
+                                        .thenReturn(expectedOptionalCreditScore);
+        //Mockito.when(creditScoreRepository.deleteById(expectedCreditScore.getId())).doNothing();
+        Mockito.when(modelMapper.map(expectedCreditScore, CreditScoreResponse.class))
+                                        .thenReturn(expectedCreditScoreResponse);
+
+        //then
+        assertEquals(expectedCreditScoreResponse, creditScoreServiceImpl.deleteCreditScoreById(id));
 
     }
 

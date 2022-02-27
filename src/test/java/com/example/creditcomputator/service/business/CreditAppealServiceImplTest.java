@@ -64,23 +64,23 @@ class CreditAppealServiceImplTest {
 
     @Test
     void deleteCreditAppealById() {
-//        //Given
-//        String id = "dldrsjgöşlwkdk5";
-//
-//        CreditAppealResponse expectedCreditAppealResponse = CreditAppealResponse.builder()
-//                .id(id)
-//                .appUserNationalId("12345678910")
-//                .assignedCreditLimit(10000.00)
-//                .creditApprovalStatus(true)
-//                .createdAt(LocalDateTime.now())
-//                .build();
-//
-//        CreditAppeal exceptedCreditAppeal = CreditAppeal.builder()
-//                .id(id)
-//                .creditLimit(10000.00)
-//                .creditApprovalStatus(true)
-//                .createdAt(LocalDateTime.now())
-//                .build();
+        //Given
+        String id = "dldrsjgöşlwkdk5";
+
+        CreditAppealResponse expectedCreditAppealResponse = CreditAppealResponse.builder()
+                .id(id)
+                .appUserNationalId("12345678910")
+                .assignedCreditLimit(10000.00)
+                .creditApprovalStatus(true)
+                .createdAt(LocalDateTime.now())
+                .build();
+
+        CreditAppeal exceptedCreditAppeal = CreditAppeal.builder()
+                .id(id)
+                .creditLimit(10000.00)
+                .creditApprovalStatus(true)
+                .createdAt(LocalDateTime.now())
+                .build();
 
 
     }
@@ -115,42 +115,41 @@ class CreditAppealServiceImplTest {
     @Test
     public void whenBusinessRuleService_GetCreditAppealReturnsEmpty_ThrowEntityNotFoundException() throws Throwable {
 
-//        //given
-//        String appUserNationalId = "11111111110";
-//
-//        AppUserResponse appUserResponse = AppUserResponse.builder()
-//
-//                .monthlyIncome(8000.0)
-//                .nationalId(appUserNationalId)
-//                .build();
-//
-//        CreditScoreResponse creditScoreResponse = CreditScoreResponse.builder()
-//                .assignedCreditScore(490.0)
-//                .build();
-//
-//        BusinessRuleData businessRuleData = new BusinessRuleData(creditScoreResponse.getAssignedCreditScore(),
-//                appUserResponse.getMonthlyIncome());
-//
-//
-//        //when
-//        Mockito.when(appUserService.getAppUserByNationalId(appUserNationalId))
-//                .thenReturn(appUserResponse);
-//
-//        Mockito.when(creditScoreService.getCreditScoreByAppUserNationalId(appUserNationalId))
-//                .thenReturn(creditScoreResponse);
-//
-//        Mockito.when(businessRuleService.getCreditAppeal(businessRuleData))
-//                .thenReturn(Optional.empty());
-//
-//
-//        assertThrows(EntityNotFoundException.class,
-//                () -> {
-//                    CreditAppealResponse creditAppealResponse = creditAppealServiceImpl.appealForCredit(appUserNationalId);
-//                }
-//        );
-//
-//    }
+        //given
+        String appUserNationalId = "11111111110";
 
+        AppUserResponse appUserResponse = AppUserResponse.builder()
+
+                .monthlyIncome(8000.0)
+                .nationalId(appUserNationalId)
+                .build();
+
+        CreditScoreResponse creditScoreResponse = CreditScoreResponse.builder()
+                .assignedCreditScore(490.0)
+                .build();
+
+        BusinessRuleData businessRuleData = new BusinessRuleData(creditScoreResponse.getAssignedCreditScore(),
+                appUserResponse.getMonthlyIncome());
+
+
+        //when
+        Mockito.when(appUserService.getAppUserByNationalId(appUserNationalId))
+                .thenReturn(appUserResponse);
+
+        Mockito.when(creditScoreService.getCreditScoreByAppUserNationalId(appUserNationalId))
+                .thenReturn(creditScoreResponse);
+
+        Mockito.when(businessRuleService.getCreditAppeal(businessRuleData))
+                .thenReturn(Optional.empty());
+
+
+        assertThrows(EntityNotFoundException.class,
+                () -> {
+                    CreditAppealResponse creditAppealResponse = creditAppealServiceImpl.appealForCredit(appUserNationalId);
+                }
+        );
 
     }
+
+
 }
