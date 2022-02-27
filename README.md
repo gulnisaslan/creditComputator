@@ -2,19 +2,19 @@
 Credit calculator service, final project
 
 # Used Techonology: 
-##Database
+## Database
 ### PostgreSql
 
-##Orm 
+## Orm 
 ### Hibernate and Jpa
 
-##Validation 
+## Validation 
 ### Spring Validation
 
-##Documentation Tool
-###Swagger UI
+## Documentation Tool
+### Swagger UI
 
-##Mapper Tool
+## Mapper Tool
 ### ModelMapper
 
 ### 1-The application is dockerized. You can run it with Docker commands.
